@@ -1,4 +1,4 @@
-# v1.7
+# v1.8
 # Install K8 single node on Ubuntu
 # !!!!!! Rodar em oel7.8 !!!!!!!!
 # https://enabling-cloud.github.io/oci-learning/manual/KubernetesClusterOnOCI.html
@@ -12,6 +12,7 @@ sudo yum -y install docker-engine
 sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo systemctl start docker
+sudo -s
 docker version
 
 # 1.1 SETUP ------------------------------------
