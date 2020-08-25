@@ -1,4 +1,4 @@
-#
+# v1.3
 # Install K8 single node on Ubuntu
 # https://enabling-cloud.github.io/oci-learning/manual/KubernetesClusterOnOCI.html
 # tem que desabilitar SELINUX e SWAP
