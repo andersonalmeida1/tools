@@ -6,19 +6,17 @@
 # com OKE
 #  
 # 1 install docker---------------------------------
-sudo yum install docker-engine
-
-yum install -y docker-engine
-systemctl daemon-reload
-systemctl enable docker && systemctl start docker
+sudo yum -y install docker-engine
+sudo systemctl daemon-reload
+sudo systemctl enable docker && systemctl start docker
 docker version
 
 # 1.1 SETUP ------------------------------------
 # Set SELinux in permissive mode (effectively disabling it)
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-sed -i 's/^SELINUXTYPE=mls$/SELINUXTYPE=targeted/' /etc/selinux/config
-systemctl disable firewalld && systemctl stop firewalld
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+sudo sed -i 's/^SELINUXTYPE=mls$/SELINUXTYPE=targeted/' /etc/selinux/config
+sudo systemctl disable firewalld && systemctl stop firewalld
 
 
 # 2 install k8 ---------------------------------
