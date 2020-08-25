@@ -6,7 +6,7 @@
 # com OKE
 #  
 # 1 install docker---------------------------------
-yum install docker-engine
+sudo yum install docker-engine
 
 yum install -y docker-engine
 systemctl daemon-reload
