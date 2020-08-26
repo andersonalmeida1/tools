@@ -1,4 +1,4 @@
-# v2.2
+# v2.3
 # Install K8 single node on Ubuntu
 # !!!!!! Rodar em oel7.8 !!!!!!!!
 # https://enabling-cloud.github.io/oci-learning/manual/KubernetesClusterOnOCI.html
@@ -40,11 +40,11 @@ sudo systemctl disable firewalld && sudo systemctl stop firewalld
 #EOF
 sudo sysctl --system
 sudo yum install -y  kubelet kubeadm kubectl kubernetes-cni
-sudo systemctl enable kubelet && systemctl start kubelet
+sudo systemctl enable kubelet && sudo systemctl start kubelet
 #disable swap
 sudo swapoff -a &&  sed -i '/ swap / s/^/#/' /etc/fstab
 # 3 init cluster--------------------------------
-sudo kubeadm reset -f && rm -rf /etc/kubernetes/
+sudo kubeadm reset -f && sudo rm -rf /etc/kubernetes/
 sudo kubeadm init
 sudo export KUBECONFIG=/etc/kubernetes/admin.conf
 sudo mkdir -p $HOME/.kube
