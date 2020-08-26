@@ -42,7 +42,7 @@ sudo sysctl --system
 sudo yum install -y  kubelet kubeadm kubectl kubernetes-cni
 sudo systemctl enable kubelet && sudo systemctl start kubelet
 #disable swap
-sudo swapoff -a &&  sed -i '/ swap / s/^/#/' /etc/fstab
+sudo swapoff -a &&  sudo sed -i '/ swap / s/^/#/' /etc/fstab
 # 3 init cluster--------------------------------
 sudo kubeadm reset -f && sudo rm -rf /etc/kubernetes/
 sudo kubeadm init
