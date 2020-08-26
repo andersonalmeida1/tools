@@ -1,4 +1,4 @@
-# v2.0
+# v2.1
 # Install K8 single node on Ubuntu
 # !!!!!! Rodar em oel7.8 !!!!!!!!
 # https://enabling-cloud.github.io/oci-learning/manual/KubernetesClusterOnOCI.html
@@ -19,7 +19,7 @@ sudo docker version
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 sudo sed -i 's/^SELINUXTYPE=mls$/SELINUXTYPE=targeted/' /etc/selinux/config
-sudo systemctl disable firewalld && systemctl stop firewalld
+sudo systemctl disable firewalld && sudo systemctl stop firewalld
 
 
 # 2 install k8 ---------------------------------
