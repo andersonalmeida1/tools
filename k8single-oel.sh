@@ -47,7 +47,9 @@ if [[ $1 == '22' ]]; then
 sudo sysctl --system
 sudo yum install -y  kubelet kubeadm kubectl kubernetes-cni
 sudo systemctl enable kubelet && sudo systemctl start kubelet
+fi
 #disable swap
+if [[ $1 == '222' ]]; then
 sudo swapoff -a &&  sudo sed -i '/ swap / s/^/#/' /etc/fstab
 fi
 # 3 init cluster--------------------------------
