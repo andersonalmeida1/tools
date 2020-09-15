@@ -8,6 +8,10 @@
 # com OKE
 #  Rodar com parametros
 #  1 11 2 22 222 3 33 4 5
+# Não funcionou direito, acho que eh devido ao limite de memoroia de 1G da maquina utilizada
+# Teste com SWAPON:  Kubeadm nao inicializa... com flags ignore preflich: da erro no kubelet
+# TODO: desabilitar o swap apenas na instalação.....
+
 # 1 install docker---------------------------------
 if [[ $1 == '1' ]]; then
 echo "11111111111111111111111111111111111111111111111111111111111111111111111111111111111"
@@ -48,6 +52,9 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
 fi
+#######################################################################
+# ATENCAO:
+# para rodar em maquinas com 1GB
 if [[ $1 == '22' ]]; then
 echo "12.222.22.22.22.222.2222.22.2222.222.222.222222222222222222222222222222222222221"
 sudo sysctl --system
