@@ -1,5 +1,5 @@
 # v3
-# Install K8 single node on Ubuntu
+# Install K8 single node on iocifree3-oel7.8-1c1g ==> 1g de memoria não rolou....
 # RODAR COM "sudo -s"  antes ==> para funcionar os redirects
 # !!!!!! Rodar em oel7.8 !!!!!!!!
 # https://enabling-cloud.github.io/oci-learning/manual/KubernetesClusterOnOCI.html
