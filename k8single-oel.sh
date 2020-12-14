@@ -34,7 +34,7 @@ sudo systemctl disable firewalld && sudo systemctl stop firewalld
 fi
 
 # 2 install k8 ---------------------------------
-# @@@@@@@@@@@@ FAZER MANUAL @@@@@@@@@@@@@@2/
+# @@@@@@@@@@@@ FAZER MANUAL @@@@@@@@@@@@@@2  ==>rodar em modo iterativo: entrar em  "sudo -i" 
 if [[ $1 == '2' ]]; then
 echo "122222222222222222222222222222222222222222222222222222222222222222221"
 sudo cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -68,6 +68,8 @@ sudo swapoff -a &&  sudo sed -i '/ swap / s/^/#/' /etc/fstab
 fi
 # 3 init cluster--------------------------------
 if [[ $1 == '3' ]]; then
+
+
 echo "3333333333333333333333333333333333333333333333333333333333333333333"
 sudo kubeadm reset -f && sudo rm -rf /etc/kubernetes/
 sudo kubeadm config images pull
@@ -83,12 +85,12 @@ fi
 # 4 setup pod net--------------------------------
 if [[ $1 == '4' ]]; then
 echo "444444444444444444444444444444444444444444444443"
-sudo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl  version | base64 | tr -d '\n')"
-sudo kubectl get pods --all-namespaces
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl  version | base64 | tr -d '\n')"
+kubectl get pods --all-namespaces
 fi
 #5 allow pods on master--------------------------
 if [[ $1 == '5' ]]; then
 echo "5555555555555555555555555555555555555555555555555555553"
-sudo kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl taint nodes --all node-role.kubernetes.io/master-
 fi
 
