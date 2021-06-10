@@ -59,7 +59,7 @@ fi
 if [[ $1 == '22' ]]; then
 echo "12.222.22.22.22.222.2222.22.2222.222.222.222222222222222222222222222222222222221"
 sudo sysctl --system
-sudo yum install -y  kubelet kubeadm kubectl kubernetes-cni
+sudo yum install -y  kubelet.aarch64 kubeadm.aarch64 kubectl.aarch64 kubernetes-cni.aarch64
 sudo systemctl enable kubelet && sudo systemctl start kubelet
 fi
 #disable swap
