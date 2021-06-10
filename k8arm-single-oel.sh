@@ -69,15 +69,13 @@ sudo swapoff -a &&  sudo sed -i '/ swap / s/^/#/' /etc/fstab
 fi
 # 3 init cluster--------------------------------
 if [[ $1 == '3' ]]; then
-
-
 echo "3333333333333333333333333333333333333333333333333333333333333333333"
 sudo kubeadm reset -f && sudo rm -rf /etc/kubernetes/
 sudo kubeadm config images pull
 fi
 if [[ $1 == '33' ]]; then
 echo "333-3333-3--33--3-3-3-3-333-33-3-3-3-3-3-3-333333-3--3-3-333333333333333333333333333333333"
-sudo kubeadm init
+sudo kubeadm init --ignore-preflight-errors=NumCPU
 export KUBECONFIG=/etc/kubernetes/admin.conf
 sudo mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
