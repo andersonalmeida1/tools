@@ -1,0 +1,1 @@
+require('http').createServer(function (req, res) { res.end('Hello v1.0.1 from:'+require("os").hostname+' @ '+(process.env.NODE_NAME||'null_nodename')+' # '+(process.env.POD_IP||'null_podip')+' - '+new Date()); }).listen(process.env.PORT||8080);
